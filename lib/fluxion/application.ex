@@ -7,6 +7,11 @@ defmodule Fluxion.Application do
 
   @impl true
   def start(_type, _args) do
+    # Add extended sentry logger
+    :logger.add_handler(:fluxion_sentry_handler, Sentry.LoggerHandler, %{
+      config: %{metadata: [:file, :line]}
+    })
+
     children = [
       FluxionWeb.Telemetry,
       Fluxion.Repo,
