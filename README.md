@@ -42,4 +42,5 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ## Links
 
 * Running application: https://fluxion.fly.dev
+* Releases: https://smart-software-engineering.github.io/fluxion/
 * Phoenix Framework: https://www.phoenixframework.org/
