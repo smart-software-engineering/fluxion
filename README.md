@@ -1,5 +1,9 @@
 # Fluxion
 
+## Current Status
+
+[![Elixir Workflow](https://github.com/smart-software-engineering/fluxion/actions/workflows/elixir.yml/badge.svg?branch=main)](https://github.com/smart-software-engineering/fluxion/actions/workflows/elixir.yml)[![Coverage Status](https://coveralls.io/repos/github/smart-software-engineering/fluxion/badge.svg?branch=main)](https://coveralls.io/github/smart-software-engineering/fluxion?branch=main)
+
 To start your Phoenix server:
 
 * Run `mix setup` to install and setup dependencies
