@@ -11,7 +11,15 @@ defmodule Fluxion.MixProject do
       aliases: aliases(),
       deps: deps(),
       compilers: [:phoenix_live_view] ++ Mix.compilers(),
-      listeners: [Phoenix.CodeReloader]
+      listeners: [Phoenix.CodeReloader],
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test,
+        "coveralls.cobertura": :test
+      ]
     ]
   end
 
@@ -62,7 +70,8 @@ defmodule Fluxion.MixProject do
       {:bandit, "~> 1.5"},
       {:faker, "~> 0.18", only: [:test]},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:sentry, "~> 10.7"}
+      {:sentry, "~> 10.7"},
+      {:excoveralls, "~> 0.18", only: :test}
     ]
   end
 

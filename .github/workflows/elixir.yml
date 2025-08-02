@@ -35,6 +35,7 @@ jobs:
     env:
       MIX_ENV: test
       DATABASE_URL: ecto://postgres:postgres@localhost:5432/fluxion_test
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -69,6 +70,8 @@ jobs:
           mix ecto.migrate
       - name: Run tests
         run: mix test
+      - name: Run Coveralls
+        run: mix coveralls.github
       - name: Run Credo
         run: mix credo --no-color
   deploy:
