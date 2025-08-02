@@ -1,4 +1,5 @@
 defmodule FluxionWeb.Endpoint do
+  use Sentry.PlugCapture
   use Phoenix.Endpoint, otp_app: :fluxion
 
   # The session will be stored in the cookie and signed,
@@ -7,7 +8,7 @@ defmodule FluxionWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_fluxion_key",
-    signing_salt: "44R9V8IV",
+    signing_salt: "nGfwqWlS",
     same_site: "Lax"
   ]
 

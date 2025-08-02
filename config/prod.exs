@@ -13,8 +13,17 @@ config :swoosh, api_client: Swoosh.ApiClient.Req
 # Disable Swoosh Local Memory Storage
 config :swoosh, local: false
 
-# Do not print debug messages in production
-config :logger, level: :info
+# Configure Sentry for production error tracking
+config :sentry,
+  environment_name: :prod,
+  traces_sample_rate: 0.2,
+  enable_source_code_context: true,
+  client: RateCalculator.SentryReqClient
+
+# Configure Logger to include Sentry backend in production and only log info+
+config :logger,
+  level: :info,
+  backends: [:console, Sentry.LoggerBackend]
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.

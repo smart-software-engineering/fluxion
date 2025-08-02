@@ -20,7 +20,7 @@ config :fluxion, FluxionWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Fluxion.PubSub,
-  live_view: [signing_salt: "ZTrqHFqy"]
+  live_view: [signing_salt: "zgAYxkGZ"]
 
 # Configures the mailer
 #

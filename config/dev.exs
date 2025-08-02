@@ -23,7 +23,7 @@ config :fluxion, FluxionWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "TCqMYXVRO87u9i6zzOQKatLuUFd5RV7Wu49H66SzVbDb2oZ8UqwkcRYOt3IUR5GY",
+  secret_key_base: "iZOFKRSaiRgcjuF29/3RWdwXlWJ2kdIU/ERoX0FqcpjorwHvz7d3vYIQrXER/39n",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:fluxion, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:fluxion, ~w(--watch)]}
@@ -86,3 +86,9 @@ config :phoenix_live_view,
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+# Disable Sentry in development
+config :sentry,
+  dsn: nil,
+  environment_name: :development,
+  client: RateCalculator.SentryReqClient

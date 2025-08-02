@@ -17,7 +17,7 @@ config :fluxion, Fluxion.Repo,
 # you can enable the server option below.
 config :fluxion, FluxionWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "Bp2l6y8wJQedzmTJ3XgEAb49nNDU/G0MuWC1hVg3X4Kpr01KLOUZGeAEPAK+9LxO",
+  secret_key_base: "UrIdv+1KW7ZKrKa7ukrAFum5+QKhW6m/X7ieprLWMJ8BFeoYuwveXI7LGCz2HFKc",
   server: false
 
 # In test we don't send emails
@@ -35,3 +35,9 @@ config :phoenix, :plug_init_mode, :runtime
 # Enable helpful, but potentially expensive runtime checks
 config :phoenix_live_view,
   enable_expensive_runtime_checks: true
+
+# Disable Sentry in test
+config :sentry,
+  dsn: nil,
+  environment_name: :test,
+  client: RateCalculator.SentryReqClient

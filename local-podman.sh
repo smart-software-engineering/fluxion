@@ -1,6 +1,6 @@
 # Check if aufbereitung-db container exists
-POD_NAME=rate-calculator-db
-DB_NAME=rate_calculator_dev
+POD_NAME=fluxion-db
+DB_NAME=fluxion_dev
 if podman container exists $POD_NAME; then
   # Check if it's running
   if [ "$(podman inspect -f '{{.State.Running}}' $POD_NAME)" = "true" ]; then
